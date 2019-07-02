@@ -1,0 +1,16 @@
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <img src="{{product.images}}" alt="{{product.title}}">
+    <div class="caption">
+      <h3>{{product.title | uppercase}}</h3>
+      <div class="product-price">
+          Price: {{product.price | currency}}
+      </div>
+      <p class="product-desc">{{product.desc}}</p>
+      <p>
+        <!-- <a href="#" class="btn btn-default" role="button">Button</a> -->
+        <a href="#" class="btn btn-primary" role="button" (click)="onBuyProduct()">Buy</a>
+      </p>
+    </div>
+  </div>
+</div>
