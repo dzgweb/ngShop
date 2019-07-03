@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { CoreModule } from '../core.module';
-
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +7,18 @@ export class LocalStorageService {
 
   constructor() { }
 
-  setItem(product) { 
-    localStorage.setItem('orderProducts', JSON.stringify(product));
+  setItem(cartProducts) {
+    localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
   }
 
   getItem() {
-    return JSON.parse(localStorage.getItem('orderProducts'));
+    return JSON.parse(localStorage.getItem('cartProducts'));
+  }
+
+  hasItem() {
+    if(localStorage.getItem('cartProducts')){
+      return true;
+    }
+    return false;
   }
 }

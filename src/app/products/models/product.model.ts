@@ -8,7 +8,7 @@ export class ProductModel implements IProduct {
         public price: number = 0,
         public count: number = 0,
         public size?: string,
-        public images: string,
+        public images?: string,
         public isAvailable?: boolean
     ){
         this.desc = desc || '';

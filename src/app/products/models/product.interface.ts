@@ -5,6 +5,6 @@ export interface IProduct {
     price: number;
     count: number;
     size?: string;
-    images: string;
+    images?: string;
     isAvailable?: boolean;
 }

@@ -4,9 +4,9 @@ import { Router } from '@angular/router';
 // rxjs
 import { Observable, Subscription} from 'rxjs';
 
-import { ProductModel } from "./../../models/product.model"
-import { ProductsService } from "./../../services/products.service"
-
+import { ProductModel } from "../../models/product.model"
+import { ProductsService } from "../../services/products.service"
+import { CartService } from '../../../cart/services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -17,7 +17,8 @@ export class ProductListComponent implements OnInit {
   products$: Observable<Array<ProductModel>>;
 
   constructor(
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private cartService: CartService
   ) { }
 
   ngOnInit() {
@@ -25,8 +26,7 @@ export class ProductListComponent implements OnInit {
   }
 
   onBuyProduct(product) {
-
-    console.log(`product purchased: ${product}`);
+    this.cartService.buyProduct(product);
   }
 
 }

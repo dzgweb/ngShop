@@ -16,23 +16,23 @@
             <div>
               <ul class="nav navbar-nav">
                 <li routerLinkActive="active">
-                  <a routerLink="/home">Home</a>
+                  <a routerLink="/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a>
                 </li>
                 <li routerLinkActive="active">
                   <a routerLink="/about">About</a>
                 </li>
                 <li routerLinkActive="active">
-                  <a routerLink="/login">Login</a>
+                  <a routerLink="/login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a>
                 </li>         
                 <li routerLinkActive="active">
-                  <a routerLink="/admin">Admin</a>
+                  <a routerLink="/admin"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Admin</a>
                 </li>          
       
               </ul>
             </div>
       
             <button class="cart btn btn-primary" type="button">
-              Carts <span class="badge">4</span>
+              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Carts <span class="badge">{{smallCart.length}}</span>
             </button>
         </div>
       </div>
