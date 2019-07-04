@@ -1,3 +1,14 @@
-<li class="list-group-item">
-  {{cartItem.title}}  <span class="product-price">{{cartItem.price | currency}}</span>
-</li>
+<div class="cart-product">
+  <div class="cart-product-img">
+    <img src="{{cartItem.images}}" alt="{{cartItem.title}}" width="50px">
+  </div>
+  <div class="cart-product-title">
+    {{cartItem.title}}
+  </div>
+  <div class="cart-product-price">
+      {{cartItem.price | currency}}
+  </div>
+  <div class="cart-product-delete">
+    <button type="button" (click)="onDelete()" class="btn btn-danger btn-sm">Delete</button>
+  </div>
+</div>

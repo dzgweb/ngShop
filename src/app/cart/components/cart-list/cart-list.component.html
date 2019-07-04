@@ -1,6 +1,12 @@
-<div *ngFor="let cartItem of cart" class="list-group">
-  <app-cart-item
+<h1>Cart</h1> 
+<div class="list-group" *ngIf="cart.length > 0">
+  <app-cart-item *ngFor="let cartItem of cart"
+    class="list-group-item"
     [cartItem]="cartItem"
     >
-</app-cart-item>
+  </app-cart-item>
+</div>
+
+<div class="list-group" *ngIf="cart.length == 0">
+  <h3>Your cart is empty</h3>
 </div>
