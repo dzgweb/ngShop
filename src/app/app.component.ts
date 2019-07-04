@@ -1,9 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
-import { CartService } from '../app/cart/services/cart.service'
-
-// rxjs
-import { Observable, Subscription} from 'rxjs';
-import { toArray } from 'rxjs/operators';
+import { CartService } from '../app/cart/services/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -13,21 +9,15 @@ import { toArray } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   title = 'ngShop';
-  private cart$: Observable<any>;
   smallCart: Array<any>;
-  sub: Subscription;
+
 
   constructor(
     private cartService: CartService
   ) {}
 
   ngOnInit(): void {
-     this.cart$ = this.cartService.getCart();
-     this.sub = this.cart$
-       .pipe(
-         toArray()
-       )
-       .subscribe(val => this.smallCart = val);
+    this.smallCart = this.cartService.getCart();
   }
 
 }

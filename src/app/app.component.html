@@ -31,9 +31,9 @@
               </ul>
             </div>
       
-            <button class="cart btn btn-primary" type="button">
+            <a class="cart btn btn-primary" routerLink="/cart">
               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Carts <span class="badge">{{smallCart.length}}</span>
-            </button>
+            </a>
         </div>
       </div>
     </div>
@@ -44,8 +44,11 @@
 <div class="container products-container">
  <!--<app-spinner *ngIf="spinnerService.isVisible()"></app-spinner>--> 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-10">
       <router-outlet></router-outlet>
+    </div>
+    <div class="col-md-2">
+      
     </div>
   </div>
 </div>
