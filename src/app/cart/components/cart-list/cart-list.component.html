@@ -1,12 +1,18 @@
 <h1>Cart</h1> 
-<div class="list-group" *ngIf="cart.length > 0">
-  <app-cart-item *ngFor="let cartItem of cart"
-    class="list-group-item"
-    [cartItem]="cartItem"
-    >
-  </app-cart-item>
+<div class="list-group" *ngIf="!cart || cart.length == 0; else cartInfo">
+    <h3>Your cart is empty</h3>
 </div>
-
-<div class="list-group" *ngIf="cart.length == 0">
-  <h3>Your cart is empty</h3>
-</div>
+<ng-template #cartInfo>
+  <div class="list-group">
+    <app-cart-item *ngFor="let cartItem of cart"
+      class="list-group-item"
+      [cartItem]="cartItem"
+      (deleteItem)="onDeleteItem($event)"
+      >
+    </app-cart-item>
+  </div>
+  <div class="cart-btn">
+    <button class="btn btn-default btn-sm" (click)="onClearCart()">Clear cart</button>
+    <button class="btn btn-primary btn-sm">Checkout</button>
+  </div>
+</ng-template>

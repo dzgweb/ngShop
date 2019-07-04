@@ -1,3 +1,10 @@
 .list-group{
     margin: 0;
 }
+.cart-btn{
+    margin: 15px 0 0 0;
+    float: right;
+    >:last-child{
+        margin: 0 0 0 15px;
+    }
+}

@@ -15,11 +15,14 @@ export class LocalStorageService {
     return JSON.parse(localStorage.getItem('cartProducts'));
   }
 
+  clear() {
+    localStorage.clear();
+  }
+
   hasItem() {
     if(localStorage.getItem('cartProducts')){
       return true;
     }
     return false;
   }
-  
 }

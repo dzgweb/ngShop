@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+//import { CartModel, CartItemModel } from '../models'
 import { CartService } from '../../services/cart.service';
 
 @Component({
@@ -18,4 +19,11 @@ export class CartListComponent implements OnInit {
     this.cart = this.cartService.getCart();
   }
 
+  onDeleteItem(cartItem) {
+    this.cartService.removeItem(cartItem);
+  }
+
+  onClearCart() {
+    this.cartService.clearCart();
+  }
 }
