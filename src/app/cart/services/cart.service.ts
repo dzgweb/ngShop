@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from '../../core/services/local-storage.service'
 
-import { Observable, of, from} from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 import { CartModel, CartItemModel } from './models/'
 
@@ -10,19 +10,31 @@ import { CartModel, CartItemModel } from './models/'
 })
 export class CartService {
   cart: CartItemModel[] = [];
+  cartSum: BehaviorSubject = new BehaviorSubject(0);
 
   constructor(
     private localStorage: LocalStorageService
   ) {
+
     if ( this.localStorage.hasItem() ) {
       this.cart = this.localStorage.getItem();
     }
   }
 
   buyProduct(product) {
-    console.log(this.cart);
-    this.localStorage.setItem(this.cart);
     this.cart.push(product);
+    this.localStorage.setItem(this.cart);
+
+    console.log(this.cart);
+  }
+
+  setSum() {
+    const sum = this.cart.reduce((sum, item) => sum += item.price * item.count, 0);
+    this.cartSum.next(sum);
+  }
+
+  getSum() {
+    return this.cartSum;
   }
 
   getCart() {
@@ -37,6 +49,8 @@ export class CartService {
     }
 
     this.localStorage.setItem(this.cart);
+    
+    this.setSum();
   }
 
   clearCart() {

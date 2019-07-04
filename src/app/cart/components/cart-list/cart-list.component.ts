@@ -10,6 +10,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartListComponent implements OnInit {
   cart;
+  cartSum: number;
 
   constructor(
     private cartService: CartService
@@ -17,6 +18,8 @@ export class CartListComponent implements OnInit {
 
   ngOnInit() {
     this.cart = this.cartService.getCart();
+    this.cartService.setSum()
+    this.cartService.getSum().subscribe( sum => this.cartSum = sum);
   }
 
   onDeleteItem(cartItem) {

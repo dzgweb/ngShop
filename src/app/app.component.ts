@@ -11,7 +11,6 @@ export class AppComponent implements OnInit {
   title = 'ngShop';
   smallCart: Array<any>;
 
-
   constructor(
     private cartService: CartService
   ) {}
