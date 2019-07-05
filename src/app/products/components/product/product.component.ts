@@ -13,7 +13,7 @@ export class ProductComponent {
   @Output() buyProduct = new EventEmitter<ProductModel>();
 
   onBuyProduct(): void {
-    event.preventDefault();
+    event.stopPropagation();
     this.buyProduct.emit(this.product);
   }
 }

@@ -2,6 +2,7 @@
   <app-product 
     *ngFor="let product of products$ | async"
     [product]="product"
-    (buyProduct)="onBuyProduct($event)">
+    (buyProduct)="onBuyProduct($event)"
+    (click)="onClickProduct(product)">
   </app-product>
 </div>

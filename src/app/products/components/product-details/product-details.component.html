@@ -1,3 +1,23 @@
-<p>
-  product-details works!
-</p>
+<div class="row nav">
+  <div class="col-md-12">
+      <button type="button" class="btn btn-default btn-xs" (click)="onGoBack()">Back</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-7">
+      <img src="{{product.images}}" alt="{{product.title}}">
+    </div>
+    <div class="col-md-5">
+        <h1>
+            {{product.title}}
+        </h1>
+        <div class="poduct-price">
+            price: <span>{{product.price | currency}}</span>
+        </div>
+
+        <h3>Description</h3>
+        <div class="product-desc" [innerHtml]="product.desc"></div>
+
+        <button class="btn btn-primary"(click)="onBuyProduct()">Buy</button>
+    </div>
+</div>
