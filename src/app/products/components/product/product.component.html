@@ -6,10 +6,10 @@
       <div class="product-price">
           Price: {{product.price | currency}}
       </div>
-      <p class="product-desc">{{product.desc}}</p>
+      <!-- <p class="product-desc">{{product.desc}}</p> -->
       <p>
         <!-- <a href="#" class="btn btn-default" role="button">Button</a> -->
-        <a href="#" class="btn btn-primary" role="button" (click)="onBuyProduct()">Buy</a>
+        <button class="btn btn-primary"(click)="onBuyProduct()">Buy</button>
       </p>
     </div>
   </div>

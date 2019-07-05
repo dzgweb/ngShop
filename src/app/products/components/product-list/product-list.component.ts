@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 // rxjs
 import { Observable, Subscription} from 'rxjs';
 
-import { ProductModel } from "../../models/product.model"
-import { ProductsService } from "../../services/products.service"
+import { ProductModel } from '../../models/product.model';
+import { ProductsService } from '../../services/products.service';
 import { CartService } from '../../../cart/services/cart.service';
 
 @Component({
@@ -18,15 +18,21 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private productsService: ProductsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.products$ = this.productsService.getProducts();
   }
 
-  onBuyProduct(product) {
+  onBuyProduct(product: ProductModel) {
     this.cartService.buyProduct(product);
+  }
+
+  onClickProduct(product: ProductModel) {
+    const link = ['/product', product.id];
+    this.router.navigate(link);
   }
 
 }

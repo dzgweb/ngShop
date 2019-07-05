@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { LocalStorageService } from '../../core/services/local-storage.service'
+import { LocalStorageService } from '../../core/services/local-storage.service';
 
 import { BehaviorSubject } from 'rxjs';
 
-import { CartModel, CartItemModel } from './models/'
+import { CartModel, CartItemModel } from '../models/';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   cart: CartItemModel[] = [];
-  cartSum: BehaviorSubject = new BehaviorSubject(0);
+  cartSum: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   constructor(
     private localStorage: LocalStorageService
