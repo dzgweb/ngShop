@@ -22,7 +22,7 @@ import { AdminModule } from './admin/admin.module';
     CartModule,
     AdminModule,
     CoreModule,
-    // AppRoutingModule MUST BE LAST 
+    // AppRoutingModule MUST BE LAST
     AppRoutingModule
   ],
   providers: [],
