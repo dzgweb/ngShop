@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { ProductModel } from './../../products/models/product.model';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +7,7 @@ export class LocalStorageService {
 
   constructor() { }
 
-  setItem(cartProducts: ProductModel) {
+  setItem(cartProducts) {
     localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
   }
 

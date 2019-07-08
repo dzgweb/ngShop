@@ -5,6 +5,8 @@ import { CartListComponent } from './cart/components/cart-list/cart-list.compone
 import { AboutComponent, PathNotFoundComponent } from './layout/components/';
 import { ProductListComponent, ProductDetailsComponent } from './products/components/';
 
+import { AuthGuard } from './core/index';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,7 +23,8 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'cart',
