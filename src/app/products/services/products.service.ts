@@ -12,7 +12,7 @@ import { productsData } from './../mocks';
 export class ProductsService {
 
   constructor() {}
-  
+
   getProducts(): Observable<ProductModel[]> {
     return of(productsData);
 

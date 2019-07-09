@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-//import { CartModel, CartItemModel } from '../models'
+// import { CartModel, CartItemModel } from '../models'
 import { CartService } from '../../services/cart.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class CartListComponent implements OnInit {
 
   ngOnInit() {
     this.cart = this.cartService.getCart();
-    this.cartService.setSum()
+    this.cartService.setSum();
     this.cartService.getSum().subscribe( sum => this.cartSum = sum);
   }
 

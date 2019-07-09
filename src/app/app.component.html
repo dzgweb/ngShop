@@ -24,7 +24,7 @@
                 <li routerLinkActive="active">
                   <a routerLink="/login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a>
                 </li>         
-                <li routerLinkActive="active">
+                <li routerLinkActive="active" *ngIf="authService.isLoggedIn" >
                   <a routerLink="/admin"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Admin</a>
                 </li>          
       

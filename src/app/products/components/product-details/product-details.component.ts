@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-//rxjs
+// rxjs
 import { switchMap } from 'rxjs/operators';
 
 import { ProductModel } from '../../models/product.model';
@@ -37,7 +37,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onGoBack() {
-    // window.history.back();   
+    // window.history.back();
     this.router.navigate(['/home']);
   }
 

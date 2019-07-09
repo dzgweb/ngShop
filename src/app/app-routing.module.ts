@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CartListComponent } from './cart/components/cart-list/cart-list.component';
-import { AboutComponent, PathNotFoundComponent } from './layout/components/';
+import { CartListComponent } from './cart/components/';
+import { AboutComponent, PathNotFoundComponent, LoginComponent } from './layout/components/';
 import { ProductListComponent, ProductDetailsComponent } from './products/components/';
+
+import { AuthGuard } from './core/index';
 
 const routes: Routes = [
   {
@@ -22,6 +24,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'cart',

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LocalStorageService } from '../../core/services/local-storage.service';
+import { LocalStorageService } from '../../core/services/';
 
 import { BehaviorSubject } from 'rxjs';
 
@@ -29,7 +29,7 @@ export class CartService {
   }
 
   setSum() {
-    const sum = this.cart.reduce((sum, item) => sum += item.price * item.count, 0);
+    const sum: number = this.cart.reduce((sum, item) => sum += item.price * item.count, 0);
     this.cartSum.next(sum);
   }
 
@@ -43,13 +43,13 @@ export class CartService {
 
   removeItem(cartItem) {
     const indx = this.cart.findIndex(item => item.id === cartItem.id);
-    
+
     if (indx > -1) {
       this.cart.splice(indx, 1);
     }
 
     this.localStorage.setItem(this.cart);
-    
+
     this.setSum();
   }
 

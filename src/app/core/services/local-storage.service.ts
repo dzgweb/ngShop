@@ -20,7 +20,7 @@ export class LocalStorageService {
   }
 
   hasItem() {
-    if(localStorage.getItem('cartProducts')){
+    if (localStorage.getItem('cartProducts')) {
       return true;
     }
     return false;
