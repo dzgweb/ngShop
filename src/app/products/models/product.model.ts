@@ -1,4 +1,5 @@
 import { IProduct } from './product.interface';
+import { ProductCategory } from './category.enum';
 
 export class ProductModel implements IProduct {
  constructor(
@@ -9,6 +10,7 @@ export class ProductModel implements IProduct {
   public count: number = 0,
   public size?: string,
   public images?: string,
+  public category: ProductCategory = null,
   public isAvailable?: boolean
  ) {
   this.desc = desc || '';

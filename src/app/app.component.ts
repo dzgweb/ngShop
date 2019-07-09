@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+
 import { CartService } from '../app/cart/services/cart.service';
+import { AuthService } from '../app/core/services/';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,8 @@ export class AppComponent implements OnInit {
   smallCart: Array<any>;
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {

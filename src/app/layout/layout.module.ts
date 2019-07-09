@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AboutComponent, PathNotFoundComponent } from './components';
+import { AboutComponent, PathNotFoundComponent, LoginComponent } from './components';
 
 @NgModule({
   declarations: [
     AboutComponent,
-    PathNotFoundComponent
+    PathNotFoundComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule
