@@ -12,7 +12,12 @@
     </app-cart-item>
   </div>
   <div class="cart-total">
-      Sum: {{cartSum  | currency}}
+    <div class="cart-total-sum">
+        Sum: {{cartSum  | currency}}
+    </div>
+    <div class="cart-total-items">
+      Total items: {{qtyItems}}
+    </div>
   </div>
   <div class="cart-btn">
     <button class="btn btn-default btn-sm" (click)="onClearCart()">Clear cart</button>

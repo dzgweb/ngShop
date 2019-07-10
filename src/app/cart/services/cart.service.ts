@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { LocalStorageService } from '../../core/services/';
+import { LocalStorageService } from '../../core/services';
 
 import { BehaviorSubject } from 'rxjs';
 
-import { CartModel, CartItemModel } from '../models/';
+import { CartModel, CartItemModel } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ import { CartModel, CartItemModel } from '../models/';
 export class CartService {
   cart: CartItemModel[] = [];
   cartSum: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  qtyItems: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   constructor(
     private localStorage: LocalStorageService
@@ -21,10 +22,16 @@ export class CartService {
     }
   }
 
-  buyProduct(product) {
-    this.cart.push(product);
-    this.localStorage.setItem(this.cart);
+  addItem(product) {
+    const cartItem = this.cart.find(i => i.id === product.id);
 
+    if (!cartItem) {
+      this.cart.push(product);
+    } else {
+      cartItem.count += product.count;
+    }
+    this.localStorage.setItem(this.cart);
+    this.setQty();
     console.log(this.cart);
   }
 
@@ -35,6 +42,15 @@ export class CartService {
 
   getSum() {
     return this.cartSum;
+  }
+
+  setQty() {
+    const countSum: number = this.cart.reduce((countSum, item) => countSum += item.count, 0);
+    this.qtyItems.next(countSum);
+  }
+
+  getQty() {
+    return this.qtyItems;
   }
 
   getCart() {
@@ -51,6 +67,7 @@ export class CartService {
     this.localStorage.setItem(this.cart);
 
     this.setSum();
+    this.setQty();
   }
 
   clearCart() {

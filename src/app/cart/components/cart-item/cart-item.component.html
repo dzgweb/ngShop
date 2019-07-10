@@ -8,6 +8,9 @@
   <div class="cart-product-price">
       {{cartItem.price | currency}}
   </div>
+  <div class="cart-product-count">
+    {{cartItem.count}}
+  </div>
   <div class="cart-product-delete">
     <button type="button" (click)="onDeleteItem()" class="btn btn-default btn-sm" title="Delete product">X</button>
   </div>

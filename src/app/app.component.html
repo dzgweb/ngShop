@@ -32,7 +32,7 @@
             </div>
       
             <a class="cart btn btn-primary" routerLink="/cart">
-              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart <span class="badge">{{smallCart.length}}</span>
+              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart <span class="badge">{{smallCart}}</span>
             </a>
         </div>
       </div>
@@ -44,11 +44,11 @@
 <div class="container products-container">
  <!--<app-spinner *ngIf="spinnerService.isVisible()"></app-spinner>--> 
   <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-12">
       <router-outlet></router-outlet>
     </div>
-    <div class="col-md-2">
+    <!-- <div class="col-md-2">
       
-    </div>
+    </div> -->
   </div>
 </div>

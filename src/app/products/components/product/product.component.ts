@@ -10,9 +10,9 @@ import { ProductModel } from './../../models/product.model';
 export class ProductComponent {
   @Input() product: ProductModel;
 
-  @Output() buyProduct = new EventEmitter<ProductModel>();
+  @Output() buyProduct: EventEmitter<ProductModel> = new EventEmitter<ProductModel>();
 
-  onBuyProduct(): void {
+  onBuyProduct(event: any): void {
     event.stopPropagation();
     this.buyProduct.emit(this.product);
   }

@@ -42,6 +42,6 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onBuyProduct() {
-    this.cartService.buyProduct(this.product);
+    this.cartService.addItem(this.product);
   }
 }

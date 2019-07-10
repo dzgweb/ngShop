@@ -6,12 +6,11 @@ import { AuthService } from '../app/core/services/';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   title = 'ngShop';
-  smallCart: Array<any>;
+  smallCart: number;
 
   constructor(
     private cartService: CartService,
@@ -19,7 +18,18 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.smallCart = this.cartService.getCart();
+   // this.smallCart = this.cartService.getCart();
+   // console.log(this.smallCart);
+   this.cartService.setQty();
+   this.cartService.getQty().subscribe( qty => this.smallCart = qty);
   }
+
+  // onActivate($event) {
+  //   console.log('Activated Component', $event);
+  // }
+
+  // onDeactivate($event) {
+  //   console.log('Deactivated Component', $event);
+  // }
 
 }
