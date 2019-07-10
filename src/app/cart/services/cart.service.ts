@@ -9,34 +9,41 @@ import { CartModel, CartItemModel } from '../models';
   providedIn: 'root'
 })
 export class CartService {
-  cart: CartItemModel[] = [];
+  // cart: CartItemModel[] = [];
+  cart: CartModel = new CartModel();
+  // cart: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
   cartSum: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   qtyItems: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   constructor(
     private localStorage: LocalStorageService
   ) {
-
     if ( this.localStorage.hasItem() ) {
       this.cart = this.localStorage.getItem();
     }
   }
 
   addItem(product) {
-    const cartItem = this.cart.find(i => i.id === product.id);
+    const cartItem = this.cart.items.find(i => i.id === product.id);
 
     if (!cartItem) {
-      this.cart.push(product);
+      this.cart.items.push(product);
     } else {
       cartItem.count += product.count;
     }
     this.localStorage.setItem(this.cart);
+
+    this.setSum();
     this.setQty();
     console.log(this.cart);
   }
 
   setSum() {
-    const sum: number = this.cart.reduce((sum, item) => sum += item.price * item.count, 0);
+    const sum: number = this.cart.items.reduce((sum, item) => sum += item.price * item.count, 0);
+
+    this.cart.sum = sum;
+    
     this.cartSum.next(sum);
   }
 
@@ -45,7 +52,10 @@ export class CartService {
   }
 
   setQty() {
-    const countSum: number = this.cart.reduce((countSum, item) => countSum += item.count, 0);
+    const countSum: number = this.cart.items.reduce((countSum, item) => countSum += item.count, 0);
+
+    this.cart.total = countSum;
+
     this.qtyItems.next(countSum);
   }
 
@@ -54,14 +64,14 @@ export class CartService {
   }
 
   getCart() {
-    return this.cart;
+    return this.cart.items;
   }
 
   removeItem(cartItem) {
-    const indx = this.cart.findIndex(item => item.id === cartItem.id);
+    const indx = this.cart.items.findIndex(item => item.id === cartItem.id);
 
     if (indx > -1) {
-      this.cart.splice(indx, 1);
+      this.cart.items.splice(indx, 1);
     }
 
     this.localStorage.setItem(this.cart);
@@ -71,7 +81,7 @@ export class CartService {
   }
 
   clearCart() {
-    this.cart.length = 0;
+    this.cart.items.length = 0;
     this.localStorage.clear();
   }
 }
