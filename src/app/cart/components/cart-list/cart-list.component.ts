@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-// import { CartModel, CartItemModel } from '../models'
+// import { CartModel } from '../../models';
 import { CartService } from '../../services/cart.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./cart-list.component.scss']
 })
 export class CartListComponent implements OnInit {
-  cart;
+  cart;   // rewrite
   cartSum: number;
   qtyItems: number;
 

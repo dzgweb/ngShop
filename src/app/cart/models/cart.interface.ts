@@ -1,7 +1,7 @@
-import { ICartItem } from './cart-item.interface';
+import { ProductModel } from '../../products/models/product.model';
 
 export interface ICart {
-  items: ICartItem[];
+  items: ProductModel[];
   total: number;
-  sum: string;
+  sum: number;
 }
