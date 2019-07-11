@@ -33,11 +33,12 @@ const routes: Routes = [
     path: 'cart',
     component: CartListComponent
   },
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
+  // Уже есть такой роут выше
+  // {
+  //   path: '',
+  //   redirectTo: '/home',
+  //   pathMatch: 'full'
+  // },
   {
     // The router will match this route if the URL requested
     // doesn't match any paths for routes defined in our configuration

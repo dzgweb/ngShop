@@ -3,7 +3,8 @@ import { LocalStorageService } from '../../core/services';
 
 import { BehaviorSubject } from 'rxjs';
 
-import { CartModel, CartItemModel } from '../models';
+// Нет такой сущности
+import { CartModel /*CartItemModel*/ } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +17,8 @@ export class CartService {
   cartSum: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   qtyItems: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  constructor(
-    private localStorage: LocalStorageService
-  ) {
-    if ( this.localStorage.hasItem() ) {
+  constructor(private localStorage: LocalStorageService) {
+    if (this.localStorage.hasItem()) {
       this.cart = this.localStorage.getItem();
     }
   }
@@ -40,10 +39,14 @@ export class CartService {
   }
 
   setSum() {
-    const sum: number = this.cart.items.reduce((sum, item) => sum += item.price * item.count, 0);
+    // одинаковые названия переменной и параметра, не стоит.
+    const sum: number = this.cart.items.reduce(
+      (sum, item) => (sum += item.price * item.count),
+      0
+    );
 
     this.cart.sum = sum;
-    
+
     this.cartSum.next(sum);
   }
 
@@ -52,7 +55,10 @@ export class CartService {
   }
 
   setQty() {
-    const countSum: number = this.cart.items.reduce((countSum, item) => countSum += item.count, 0);
+    const countSum: number = this.cart.items.reduce(
+      (countSum, item) => (countSum += item.count),
+      0
+    );
 
     this.cart.total = countSum;
 
@@ -67,6 +73,7 @@ export class CartService {
     return this.cart.items;
   }
 
+  // желательно указать тип параметра
   removeItem(cartItem) {
     const indx = this.cart.items.findIndex(item => item.id === cartItem.id);
 

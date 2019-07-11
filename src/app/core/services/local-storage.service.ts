@@ -7,6 +7,7 @@ export class LocalStorageService {
 
   constructor() { }
 
+  // тип any?
   setItem(cartProducts) {
     localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
   }

@@ -10,6 +10,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartListComponent implements OnInit {
   cart;   // rewrite
+  // может быть для этих данных использовать тип tuple?
   cartSum: number;
   qtyItems: number;
 
