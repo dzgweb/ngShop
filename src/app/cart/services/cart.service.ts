@@ -3,13 +3,13 @@ import { LocalStorageService } from '../../core/services';
 
 import { BehaviorSubject } from 'rxjs';
 
-import { CartModel, CartItemModel } from '../models';
+import { CartModel } from '../models';
+import { ProductModel } from '../../products/models/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  // cart: CartItemModel[] = [];
   cart: CartModel = new CartModel();
   // cart: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
@@ -20,7 +20,7 @@ export class CartService {
     private localStorage: LocalStorageService
   ) {
     if ( this.localStorage.hasItem() ) {
-      this.cart = this.localStorage.getItem();
+      this.cart.items = this.localStorage.getItem();
     }
   }
 
