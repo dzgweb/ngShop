@@ -23,7 +23,7 @@
 1.10 Добавлена кнопка очистки корзины onClearCart и удаления товара onDeleteItem
 
 ## 2
-2.1. Созданная функциональность разделена на модули CartModule, ProductsModule, CoreModule, SharedModule.
+2.1. Созданная функциональность разделена на модули AppModule, CartModule, ProductsModule, OrdersModule, CoreModule, SharedModule.
 
 2.2 Реализован Routing между компонентами
 
@@ -43,3 +43,12 @@
 
 2.8 Добавлен canActivateChild в AuthGuard и AdminRoutes
 
+2.9 Если товара нету в наличии кнопка купить недоступна
+
+
+## 3
+3.1 Исправлен сервис LocalStorageService
+
+3.2 Переписал CartService и CartModel, список товаров, общее количество и общая сумма теперь хранятся в одном объекте cart он передается как BehaviorSubject и на него уже       подписываются компоненты CartListComponent и AppComponent
+
+3.3 Обновлены компоненты CartListComponent и AppComponent

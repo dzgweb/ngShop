@@ -3,6 +3,8 @@ import { Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import { CartService } from '../app/cart/services/cart.service';
 import { AuthService } from '../app/core/services/';
 
+import { CartModel } from '../app/cart/models/';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,18 +12,15 @@ import { AuthService } from '../app/core/services/';
 })
 export class AppComponent implements OnInit {
   title = 'ngShop';
-  smallCart: number;
+  smallCart: CartModel;
 
   constructor(
     private cartService: CartService,
-    private authService: AuthService
+    public authService: AuthService
   ) {}
 
-  ngOnInit(): void {
-   // this.smallCart = this.cartService.getCart();
-   // console.log(this.smallCart);
-   this.cartService.setQty();
-   this.cartService.getQty().subscribe( qty => this.smallCart = qty);
+  ngOnInit() {
+    this.cartService.getCart().subscribe( cart => this.smallCart = cart);
   }
 
   // onActivate($event) {

@@ -1,10 +1,10 @@
 <h1>Cart</h1> 
-<div class="list-group" *ngIf="!cart || cart.length == 0; else cartInfo">
+<div class="list-group" *ngIf="!cart || cart.items.length == 0; else cartInfo">
     <h3>Your cart is empty</h3>
 </div>
 <ng-template #cartInfo>
   <div class="list-group">
-    <app-cart-item *ngFor="let cartItem of cart"
+    <app-cart-item *ngFor="let cartItem of cart.items"
       class="list-group-item"
       [cartItem]="cartItem"
       (deleteItem)="onDeleteItem($event)"
@@ -13,10 +13,10 @@
   </div>
   <div class="cart-total">
     <div class="cart-total-sum">
-        Sum: {{cartSum  | currency}}
+        Sum: {{cart.sum  | currency}}
     </div>
     <div class="cart-total-items">
-      Total items: {{qtyItems}}
+      Total items: {{cart.total}}
     </div>
   </div>
   <div class="cart-btn">

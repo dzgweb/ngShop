@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { ProductModel } from '../../products/models/product.model';
 import { CartModel } from '../../cart/models';
 
 @Injectable({
@@ -14,7 +13,7 @@ export class LocalStorageService {
     localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
   }
 
-  getItem(): ProductModel[] {
+  getItem(): CartModel {
     return JSON.parse(localStorage.getItem('cartProducts'));
   }
 

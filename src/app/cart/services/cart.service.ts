@@ -11,20 +11,21 @@ import { ProductModel } from '../../products/models/product.model';
 })
 export class CartService {
   cart: CartModel = new CartModel();
-  // cart: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  cartSum: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-  qtyItems: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  cartSubject: BehaviorSubject<CartModel> = new BehaviorSubject<CartModel>(this.cart);
 
-  constructor(
-    private localStorage: LocalStorageService
-  ) {
+  constructor(private localStorage: LocalStorageService) {
     if ( this.localStorage.hasItem() ) {
-      this.cart.items = this.localStorage.getItem();
+      this.cart = this.localStorage.getItem();
+      this.cartSubject.next(this.cart);
     }
   }
 
-  addItem(product) {
+  getCart() {
+    return this.cartSubject;
+  }
+
+  addItem(product: ProductModel): void {
     const cartItem = this.cart.items.find(i => i.id === product.id);
 
     if (!cartItem) {
@@ -33,41 +34,11 @@ export class CartService {
       cartItem.count += product.count;
     }
     this.localStorage.setItem(this.cart);
-
-    this.setSum();
-    this.setQty();
-    console.log(this.cart);
+    this.updateTotals();
+    this.cartSubject.next(this.cart);
   }
 
-  setSum() {
-    const sum: number = this.cart.items.reduce((sum, item) => sum += item.price * item.count, 0);
-
-    this.cart.sum = sum;
-    
-    this.cartSum.next(sum);
-  }
-
-  getSum() {
-    return this.cartSum;
-  }
-
-  setQty() {
-    const countSum: number = this.cart.items.reduce((countSum, item) => countSum += item.count, 0);
-
-    this.cart.total = countSum;
-
-    this.qtyItems.next(countSum);
-  }
-
-  getQty() {
-    return this.qtyItems;
-  }
-
-  getCart() {
-    return this.cart.items;
-  }
-
-  removeItem(cartItem) {
+  removeItem(cartItem: ProductModel): void {
     const indx = this.cart.items.findIndex(item => item.id === cartItem.id);
 
     if (indx > -1) {
@@ -75,13 +46,33 @@ export class CartService {
     }
 
     this.localStorage.setItem(this.cart);
-
-    this.setSum();
-    this.setQty();
+    this.updateTotals();
+    this.cartSubject.next(this.cart);
   }
 
-  clearCart() {
-    this.cart.items.length = 0;
+  clearCart(): void {
+    this.cart = new CartModel();
     this.localStorage.clear();
+    this.cartSubject.next(this.cart);
   }
+
+  updateTotals(): void {
+    this.cart.total = this.getTotalQty();
+    this.cart.sum = this.getTotalSum();
+  }
+
+  private getTotalQty(): number {
+    const totalQty: number = this.cart.items.reduce(
+      (countSum, item) => (countSum += item.count), 0
+    );
+
+    return totalQty;
+  }
+
+  private getTotalSum(): number {
+    const totalSum: number = this.cart.items.reduce((sum, item) => sum += item.price * item.count, 0);
+
+    return totalSum;
+  }
+
 }

@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { CartModule } from './cart/cart.module';
 import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
+import { OrdersModuleModule } from './orders-module/orders-module.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AppComponent } from './app.component';
     AdminModule,
     CoreModule,
     // AppRoutingModule MUST BE LAST
-    AppRoutingModule
+    AppRoutingModule,
+    OrdersModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
