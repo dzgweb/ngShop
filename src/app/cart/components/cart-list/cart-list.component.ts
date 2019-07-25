@@ -15,6 +15,7 @@ export class CartListComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
+    // как на счет отписки?
     this.cartService.getCart().subscribe( cart => this.cart = cart);
   }
 
