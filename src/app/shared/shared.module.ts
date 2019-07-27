@@ -4,12 +4,9 @@ import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { HighlightDirective } from './directives/highlight.directive';
 
-
 @NgModule({
   declarations: [SpinnerComponent, HighlightDirective],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   exports: [SpinnerComponent, HighlightDirective]
 })
 export class SharedModule { }

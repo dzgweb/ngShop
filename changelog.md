@@ -52,3 +52,11 @@
 3.2 Переписал CartService и CartModel, список товаров, общее количество и общая сумма теперь хранятся в одном объекте cart он передается как BehaviorSubject и на него уже       подписываются компоненты CartListComponent и AppComponent
 
 3.3 Обновлены компоненты CartListComponent и AppComponent
+
+-- new --
+3.4 добавлен unsubscribe для CartListComponent, использовал Lifecycle Hooks ngOnDestroy 
+
+3.5 добавлен <h1 #appTitle></h1> с шаблонной переменной, использовал @ViewChild чтобы получить доступ к DOM элементу темплейта и установить заголовок для приложения из класса (пропущенный пункт из hw_2)
+
+3.5 создана директива HighlightDirective которая меняет фон при наведении на товар в корзине, директива зарегистрирована в SharedModule
+   использован @HostListener декоратор

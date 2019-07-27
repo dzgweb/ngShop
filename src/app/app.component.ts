@@ -12,7 +12,7 @@ import { CartModel } from '../app/cart/models/';
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('appTitle', {static: true})
+  @ViewChild('appTitle', { static: false })
   title: ElementRef<HTMLHeadingElement>;
 
   smallCart: CartModel;
