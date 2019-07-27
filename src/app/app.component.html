@@ -44,9 +44,15 @@
 
 <div class="container products-container">
  <!--<app-spinner *ngIf="spinnerService.isVisible()"></app-spinner>--> 
+ <div class="row">
+   <div class="col-md-12">
+    <h1 #appTitle></h1>
+   </div>
+ </div>
   <div class="row">
     <div class="col-md-12">
-      <router-outlet></router-outlet>
+      <router-outlet (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'>
+      </router-outlet>
     </div>
     <!-- <div class="col-md-2">
       

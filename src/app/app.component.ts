@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 
 import { CartService } from '../app/cart/services/cart.service';
 import { AuthService } from '../app/core/services/';
@@ -10,8 +10,11 @@ import { CartModel } from '../app/cart/models/';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  title = 'ngShop';
+export class AppComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('appTitle', {static: false})
+  title: ElementRef<HTMLHeadingElement>;
+
   smallCart: CartModel;
 
   constructor(
@@ -21,14 +24,19 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.cartService.getCart().subscribe( cart => this.smallCart = cart);
+    this.title.nativeElement.textContent = 'Welcome to Angular shop!';
   }
 
-  // onActivate($event) {
-  //   console.log('Activated Component', $event);
-  // }
+  ngAfterViewInit() {
+   
+  }
 
-  // onDeactivate($event) {
-  //   console.log('Deactivated Component', $event);
-  // }
+  onActivate($event) {
+    console.log('Activated Component', $event);
+  }
+
+  onDeactivate($event) {
+    console.log('Deactivated Component', $event);
+  }
 
 }
