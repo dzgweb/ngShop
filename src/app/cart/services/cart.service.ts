@@ -21,7 +21,7 @@ export class CartService {
     }
   }
 
-  getCart() {
+  getCart(): BehaviorSubject<CartModel> {
     return this.cartSubject;
   }
 
@@ -33,8 +33,9 @@ export class CartService {
     } else {
       cartItem.count += product.count;
     }
-    this.localStorage.setItem(this.cart);
+
     this.updateTotals();
+    this.localStorage.setItem(this.cart);
     this.cartSubject.next(this.cart);
   }
 
@@ -45,8 +46,8 @@ export class CartService {
       this.cart.items.splice(indx, 1);
     }
 
-    this.localStorage.setItem(this.cart);
     this.updateTotals();
+    this.localStorage.setItem(this.cart);
     this.cartSubject.next(this.cart);
   }
 

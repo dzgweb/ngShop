@@ -12,7 +12,7 @@ import { CartModel } from '../app/cart/models/';
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('appTitle', {static: false})
+  @ViewChild('appTitle', {static: true})
   title: ElementRef<HTMLHeadingElement>;
 
   smallCart: CartModel;
@@ -24,11 +24,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.cartService.getCart().subscribe( cart => this.smallCart = cart);
-    this.title.nativeElement.textContent = 'Welcome to Angular shop!';
   }
 
   ngAfterViewInit() {
-   
+    this.title.nativeElement.textContent = 'Welcome to Angular shop!';
   }
 
   onActivate($event) {

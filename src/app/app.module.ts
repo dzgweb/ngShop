@@ -11,12 +11,10 @@ import { CartModule } from './cart/cart.module';
 import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
 import { OrdersModuleModule } from './orders-module/orders-module.module';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SpinnerComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
