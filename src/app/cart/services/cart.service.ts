@@ -13,6 +13,7 @@ export class CartService {
   cart: CartModel = new CartModel();
 
   cartSubject: BehaviorSubject<CartModel> = new BehaviorSubject<CartModel>(this.cart);
+  public cartCannel$ = this.cartSubject.asObservable();
 
   constructor(private localStorage: LocalStorageService) {
     if ( this.localStorage.hasItem() ) {

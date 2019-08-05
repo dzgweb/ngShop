@@ -15,7 +15,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('appTitle', { static: false })
   title: ElementRef<HTMLHeadingElement>;
 
-  smallCart: CartModel;
+  // smallCart: CartModel;
+  smallCart$ = this.cartService.cartCannel$;
 
   constructor(
     private cartService: CartService,
@@ -23,7 +24,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit() {
-    this.cartService.getCart().subscribe( cart => this.smallCart = cart);
+    // this.cartService.getCart().subscribe( cart => this.smallCart = cart);
   }
 
   ngAfterViewInit() {

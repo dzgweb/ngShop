@@ -32,8 +32,8 @@
             </div>
       
             <a class="cart btn btn-primary" routerLink="/cart">
-              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart <span class="badge">{{smallCart.total}}</span> &nbsp;
-              <span>Sum: {{smallCart.sum}}</span>
+              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart <span class="badge">{{(smallCart$ | async).total}}</span> &nbsp;
+              <span>Sum: {{(smallCart$ | async).sum}}</span>
             </a>
         </div>
       </div>
