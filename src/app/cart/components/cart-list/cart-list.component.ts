@@ -27,17 +27,35 @@ export class CartListComponent implements OnInit, OnDestroy {
         },
         err => console.log(err)
       );
+    console.log(this.cart);
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
+  onIncrementItem(cartItem: ProductModel): void {
+    this.cartService.incrementItem(cartItem);
+  }
+
+  onDecrementItem(cartItem: ProductModel): void {
+    this.cartService.decrementItem(cartItem);
+  }
+
   onDeleteItem(cartItem: ProductModel): void {
     this.cartService.removeItem(cartItem);
+  }
+
+  onChangeQtyItem(cartItem: ProductModel): void {
+    this.cartService.changeQtyItem(cartItem);
   }
 
   onClearCart(): void {
     this.cartService.clearCart();
   }
+
+  dateOrder() {
+    return new Date();
+  }
+
 }

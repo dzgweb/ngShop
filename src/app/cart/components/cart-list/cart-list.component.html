@@ -2,12 +2,19 @@
 <div class="list-group" *ngIf="!cart || cart.items.length == 0; else cartInfo">
     <h3>Your cart is empty</h3>
 </div>
+<div class="date-order">
+  {{dateOrder() | date:'medium'}}
+</div>
+
 <ng-template #cartInfo>
   <div class="list-group">
     <app-cart-item *ngFor="let cartItem of cart.items"
       class="list-group-item"
       [cartItem]="cartItem"
       (deleteItem)="onDeleteItem($event)"
+      (increment)="onIncrementItem($event)"
+      (decrement)="onDecrementItem($event)"
+      (qtyItem)="onChangeQtyItem($event)"      
       appHighlight>
     </app-cart-item>
   </div>

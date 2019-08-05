@@ -36,8 +36,6 @@ export class CartService {
     }
 
     this.updateTotals();
-    this.localStorage.setItem(this.cart);
-    this.cartSubject.next(this.cart);
   }
 
   removeItem(cartItem: ProductModel): void {
@@ -48,9 +46,29 @@ export class CartService {
     }
 
     this.updateTotals();
-    this.localStorage.setItem(this.cart);
-    this.cartSubject.next(this.cart);
   }
+
+  incrementItem(updCartItem: ProductModel): void {
+    const cartItem = this.cart.items.find((item) => item.id === updCartItem.id);
+
+    cartItem.count += 1;
+    this.updateTotals();
+  }
+
+  decrementItem(updCartItem: ProductModel): void {
+    const cartItem = this.cart.items.find((item) => item.id === updCartItem.id);
+
+    cartItem.count -= 1;
+    this.updateTotals();
+  }
+
+  changeQtyItem(updCartItem: ProductModel): void {
+    const cartItem = this.cart.items.find((item) => item.id === updCartItem.id);
+
+    cartItem.count = +updCartItem.count;
+    this.updateTotals();
+  }
+
 
   clearCart(): void {
     this.cart = new CartModel();
@@ -61,6 +79,9 @@ export class CartService {
   updateTotals(): void {
     this.cart.total = this.getTotalQty();
     this.cart.sum = this.getTotalSum();
+
+    this.localStorage.setItem(this.cart);
+    this.cartSubject.next(this.cart);
   }
 
   private getTotalQty(): number {

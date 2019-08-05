@@ -6,10 +6,22 @@
     {{cartItem.title}}
   </div>
   <div class="cart-product-price">
-      {{cartItem.price | currency}}
+      {{cartItem.price | currency:'USD'}}
   </div>
   <div class="cart-product-count">
-    {{cartItem.count}}
+    <button type="button" class="btn btn-default btn-xs" (click)="onQtyMinus()" [disabled]='cartItem.count === 1'>
+        <span class="glyphicon glyphicon-minus"></span>
+      </button>
+      <input 
+        type="text"  
+        name="count" 
+        value="{{cartItem.count}}" 
+        [(ngModel)]="cartItem.count" 
+        class="form-control"
+        (ngModelChange)="onQtyChange()">
+      <button type="button" class="btn btn-default btn-xs" (click)="onQtyPlus()" [disabled]='cartItem.count > 99'>
+        <span class="glyphicon glyphicon-plus"></span>
+      </button> 
   </div>
   <div class="cart-product-delete">
     <button type="button" (click)="onDeleteItem()" class="btn btn-default btn-sm" title="Delete product">X</button>

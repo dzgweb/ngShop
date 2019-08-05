@@ -53,10 +53,28 @@
 
 3.3 Обновлены компоненты CartListComponent и AppComponent
 
--- new --
-3.4 добавлен unsubscribe для CartListComponent, использовал Lifecycle Hooks ngOnDestroy 
+###### NEW ######
 
-3.5 добавлен <h1 #appTitle></h1> с шаблонной переменной, использовал @ViewChild чтобы получить доступ к DOM элементу темплейта и установить заголовок для приложения из класса (пропущенный пункт из hw_2)
+3.4 Для компонентов ProductComponent и CartItemComponent установлена стратегия ChangeDetectionStrategy.OnPush
 
-3.5 создана директива HighlightDirective которая меняет фон при наведении на товар в корзине, директива зарегистрирована в SharedModule
+3.5 добавлен unsubscribe для CartListComponent, использовал Lifecycle Hooks ngOnDestroy 
+
+3.6 добавлен <h1 #appTitle></h1> с шаблонной переменной, использовал @ViewChild чтобы получить доступ к DOM элементу темплейта и установить заголовок для приложения из класса (пропущенный пункт из hw_2)
+
+3.7 создана директива HighlightDirective которая меняет фон при наведении на товар в корзине, директива зарегистрирована в SharedModule
    использован @HostListener декоратор
+
+3.8  Модифицированы компоненты CartItemComponent, CartListComponent и сервис CartService добавлена возможность увеличить/уменьшить количество для указаного товара
+
+
+## 4
+
+4.1 Применены встроенные пайпы: <br> 
+   - для форматирования цены (| currency:'USD')<br>
+   - для форматирования категории и названия товара в верхний регистр (| uppercase)<br>
+   - для форматирования даты (| date:'medium')
+
+4.2 Изменить метод getProducts() сервиса ProductService так, чтобы он возвращал observable.<br> 
+   применил async пайп для отображения данных, предоставленных сервисом ProductService на странице.
+
+4.2.2 Добавил public свойство cartCannel$ в CartService передающее cartSubject как Observable, применил async пайп для отображения данных в smallCart$ AppComponent 
