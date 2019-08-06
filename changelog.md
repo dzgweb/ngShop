@@ -70,9 +70,9 @@
 ## 4
 
 4.1 Применены встроенные пайпы: <br> 
-   - для форматирования цены (| currency:'USD')<br>
-   - для форматирования категории и названия товара в верхний регистр (| uppercase)<br>
-   - для форматирования даты (| date:'medium')
+   - для форматирования цены (| currency:'USD') в CartListComponent, ProductComponent, ProductDetailsComponent<br>
+   - для форматирования категории и названия товара в верхний регистр (| uppercase) в CartListComponent, ProductComponent, ProductDetailsComponent<br>
+   - для форматирования даты (| date:'medium') в CartListComponent, ProductComponent, ProductDetailsComponent
 
 4.2 Изменить метод getProducts() сервиса ProductService так, чтобы он возвращал observable.<br> 
    применил async пайп для отображения данных, предоставленных сервисом ProductService на странице.
