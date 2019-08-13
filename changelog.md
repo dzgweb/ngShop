@@ -57,11 +57,11 @@
 
 3.4 Для компонентов ProductComponent и CartItemComponent установлена стратегия ChangeDetectionStrategy.OnPush
 
-3.5 добавлен unsubscribe для CartListComponent, использовал Lifecycle Hooks ngOnDestroy 
+3.5 Добавлен unsubscribe для CartListComponent, использовал Lifecycle Hooks ngOnDestroy 
 
-3.6 добавлен <h1 #appTitle></h1> с шаблонной переменной, использовал @ViewChild чтобы получить доступ к DOM элементу темплейта и установить заголовок для приложения из класса (пропущенный пункт из hw_2)
+3.6 Lобавлен <h1 #appTitle></h1> с шаблонной переменной, использовал @ViewChild чтобы получить доступ к DOM элементу темплейта и установить заголовок для приложения из класса (пропущенный пункт из hw_2)
 
-3.7 создана директива HighlightDirective которая меняет фон при наведении на товар в корзине, директива зарегистрирована в SharedModule
+3.7 Cоздана директива HighlightDirective которая меняет фон при наведении на товар в корзине, директива зарегистрирована в SharedModule
    использован @HostListener декоратор
 
 3.8  Модифицированы компоненты CartItemComponent, CartListComponent и сервис CartService добавлена возможность увеличить/уменьшить количество для указаного товара
@@ -74,7 +74,15 @@
    - для форматирования категории и названия товара в верхний регистр (| uppercase) в CartListComponent, ProductComponent, ProductDetailsComponent<br>
    - для форматирования даты (| date:'medium') в CartListComponent, ProductComponent, ProductDetailsComponent
 
-4.2 Изменить метод getProducts() сервиса ProductService так, чтобы он возвращал observable.<br> 
+4.2 Изменен метод getProducts() сервиса ProductService так, чтобы он возвращал observable.<br> 
    применил async пайп для отображения данных, предоставленных сервисом ProductService на странице.
 
-4.2.2 Добавил public свойство cartCannel$ в CartService передающее cartSubject как Observable, применил async пайп для отображения данных в smallCart$ AppComponent 
+4.2.2 Добавлено public свойство cartCannel$ в CartService передающее cartSubject как Observable, применил async пайп для отображения данных в smallCart$ AppComponent 
+
+4.3 Создан OrderByPipe для сортировки массива объектов, пайп принимает два параметра: <br> 
+   - поле в виде строки, по которому необходимо сортировать массив объектов<br> 
+   - флаг, который определяет порядок сортировки<br> 
+   По умолчанию сортировка по убыванию.<br> 
+   Пайп зарегистрирован в SharedModule. Применен OrderByPipe в приложении для сортировки товаров корзины, реализована возможность сортировать массив товаров по цене, количеству, названию c помощью выпадающего списка.
+
+
