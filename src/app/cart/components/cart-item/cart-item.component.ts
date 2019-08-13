@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, HostBinding } from '@angular/core';
 
 import { ProductModel } from '../../../products/models/product.model';
 
@@ -14,6 +14,9 @@ export class CartItemComponent {
   @Output() decrement = new EventEmitter();
   @Output() deleteItem = new EventEmitter();
   @Output() qtyItem = new EventEmitter();
+
+  @HostBinding('class')
+  className = 'list-group-item';
 
   onDeleteItem(): void {
     this.deleteItem.emit(this.cartItem);

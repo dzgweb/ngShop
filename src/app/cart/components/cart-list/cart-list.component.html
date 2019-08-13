@@ -6,10 +6,23 @@
   {{dateOrder() | date:'medium'}}
 </div>
 
+<div class="row">
+  <div class="col-md-12">
+    <select #sortKey (change)="0">
+      <option value="price">Price</option>
+      <option value="count">Number</option>
+      <option value="title">Name</option>
+    </select>
+    <select #sortOrder (change)="0">
+      <option value="false">asc</option>
+      <option value="true">desc</option>
+    </select>
+  </div>
+</div>
+
 <ng-template #cartInfo>
   <div class="list-group">
-    <app-cart-item *ngFor="let cartItem of cart.items"
-      class="list-group-item"
+    <app-cart-item *ngFor="let cartItem of cart.items | orderBy :sortKey.value :sortOrder.value"
       [cartItem]="cartItem"
       (deleteItem)="onDeleteItem($event)"
       (increment)="onIncrementItem($event)"
