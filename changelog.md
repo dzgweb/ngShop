@@ -53,8 +53,6 @@
 
 3.3 Обновлены компоненты CartListComponent и AppComponent
 
-###### NEW ######
-
 3.4 Для компонентов ProductComponent и CartItemComponent установлена стратегия ChangeDetectionStrategy.OnPush
 
 3.5 Добавлен unsubscribe для CartListComponent, использовал Lifecycle Hooks ngOnDestroy 
@@ -86,3 +84,8 @@
    Пайп зарегистрирован в SharedModule. Применен OrderByPipe в приложении для сортировки товаров корзины, реализована возможность сортировать массив товаров по цене, количеству, названию c помощью выпадающего списка.
 
 4.4 Пайп OrderByPipe использован копанентах ProductListComponent и CartListComponent
+
+
+# 5 (missed tasks from 3 tasks)
+
+4.1 Создан сервис ConfigOptionsService который хранит объект настроек (id, login, email...), у сервиса есть метод для установки данных который на вход принимает объект и метод извлечения данных. Предусмотрена возможность установки подмножества свойств.

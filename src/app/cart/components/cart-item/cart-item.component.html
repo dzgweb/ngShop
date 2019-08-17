@@ -12,11 +12,9 @@
     <button type="button" class="btn btn-default btn-xs" (click)="onQtyMinus()" [disabled]='cartItem.count === 1'>
         <span class="glyphicon glyphicon-minus"></span>
       </button>
-      <!-- value="{{cartItem.count}}" не лишнее?  -->
       <input
         type="text"
         name="count"
-        value="{{cartItem.count}}"
         [(ngModel)]="cartItem.count"
         class="form-control"
         (ngModelChange)="onQtyChange()">
