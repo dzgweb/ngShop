@@ -72,7 +72,7 @@ export const productsData: ProductModel[] = [
 		count: 1,
 		images: 'http://via.placeholder.com/400x400',
 		category: ProductCategory.Category5,
-		isAvailable: false
+		isAvailable: true
 	},
 	{
 		id: 7,

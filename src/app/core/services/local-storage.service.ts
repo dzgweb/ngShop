@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 
+import { CoreModule } from '../core.module';
 import { CartModel } from '../../cart/models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: CoreModule
 })
 export class LocalStorageService {
 

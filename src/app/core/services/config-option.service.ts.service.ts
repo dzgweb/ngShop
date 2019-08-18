@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CoreModule } from '../core.module';
 
+import { CoreModule } from '../core.module';
 import { ConfigModel } from '../model/config.model';
 
 @Injectable({

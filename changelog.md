@@ -91,4 +91,10 @@
 4.1 Создан сервис ConfigOptionsService который хранит объект настроек (id, login, email...), у сервиса есть метод для установки данных который на вход принимает объект и метод извлечения данных. Предусмотрена возможность установки подмножества свойств.
 
 4.2 Создан сервис ConstantService (core/service/constant.service.ts) в виде готового литерала объекта, сервис зарегистрирован в CoreModel используя useValue: { App: 'ngShop', Ver: '1.0'} 
-4.7 В компонент AboutComponent внедрены сервисы ConfigOptionService, ConstantService, GeneratorService, GeneratorFactoryService используя декоратор @Option
+
+4.3 Создан GeneratorService (core/service/generator.ts) который генерирует случайную последовательность символов длины n из набора a-z, A-Z, 0-9. <br>
+Создан GeneratorFactoryService(n: number), который предоставляет сгенерированную строку. Зарегистрирован используя useFactory. 
+
+4.4 В CoreModule зарегистрированны LocalStorageService, ConstantsService, СonfigOptionsService
+
+4.5 В компонент AboutComponent внедрены сервисы ConfigOptionService, ConstantService, GeneratorService, GeneratorFactoryService используя декоратор @Option

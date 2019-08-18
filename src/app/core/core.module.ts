@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ConstantService } from './services';
+import { ConstantsService } from './services/constants.service';
 
 @NgModule({
   declarations: [],
@@ -9,7 +9,7 @@ import { ConstantService } from './services';
     CommonModule
   ],
   providers: [
-    { provide: ConstantService, useValue: { App: 'ngShop', Ver: '1.0'} }
+    { provide: ConstantsService, useValue: { App: 'ngShop', Ver: '1.0'} }
   ]
 })
 export class CoreModule { }
