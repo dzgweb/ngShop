@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Optional } from '@angular/core';
+
+import { СonfigOptionsService } from '../../../core/services';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Optional() private configService: СonfigOptionsService
+  ) { }
 
   ngOnInit() {
   }

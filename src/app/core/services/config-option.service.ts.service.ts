@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
+import { CoreModule } from '../core.module';
 
 import { ConfigModel } from '../model/config.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: CoreModule
 })
 export class СonfigOptionsService {
-  private config: ConfigModel;
+  private config: ConfigModel = new ConfigModel();
 
   constructor() { }
 
