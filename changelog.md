@@ -99,4 +99,4 @@
 
 4.5 В компонент AboutComponent внедрены сервисы ConfigOptionService, ConstantService, GeneratorService, GeneratorFactoryService используя декоратор @Option
 
-4.6 Добавлена директива appScalefont увеличивающая при клике шрифт. Для директивы добавлен @Input для передачи размера шрифта, используется ElementRef/Render2
+4.6 Добавлена директива appScalefont увеличивающая при клике шрифт. Для директивы добавлен @Input для передачи размера шрифта, используется ElementRef/Render2. Директива добавлена на параграфы компонента AboutComponent для демо.
