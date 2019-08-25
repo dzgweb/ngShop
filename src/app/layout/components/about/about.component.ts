@@ -1,6 +1,5 @@
 import { Component, OnInit, Optional, Inject } from '@angular/core';
 
-import {  } from '../../../core/services';
 import { ConstantsService, GeneratorS, GeneratorFactoryService, GeneratorService } from '../../../core/services';
 
 @Component({

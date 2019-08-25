@@ -86,17 +86,20 @@
 4.4 Пайп OrderByPipe использован копанентах ProductListComponent и CartListComponent
 
 
-# 5 (missed tasks from 3 tasks)
+# 5 (+missed point from 3 task)
 
-4.1 Создан сервис ConfigOptionsService который хранит объект настроек (id, login, email...), у сервиса есть метод для установки данных который на вход принимает объект и метод извлечения данных. Предусмотрена возможность установки подмножества свойств.
+5.1 Создан сервис ConfigOptionsService который хранит объект настроек (id, login, email...), у сервиса есть метод для установки данных который на вход принимает объект и метод извлечения данных. Предусмотрена возможность установки подмножества свойств.
 
-4.2 Создан сервис ConstantService (core/service/constant.service.ts) в виде готового литерала объекта, сервис зарегистрирован в CoreModel используя useValue: { App: 'ngShop', Ver: '1.0'} 
+5.2 Создан сервис ConstantService (core/service/constant.service.ts) в виде готового литерала объекта, сервис зарегистрирован в CoreModel используя useValue: { App: 'ngShop', Ver: '1.0'} 
 
-4.3 Создан GeneratorService (core/service/generator.ts) который генерирует случайную последовательность символов длины n из набора a-z, A-Z, 0-9. <br>
+5.3 Создан GeneratorService (core/service/generator.ts) который генерирует случайную последовательность символов длины n из набора a-z, A-Z, 0-9. <br>
 Создан GeneratorFactoryService(n: number), который предоставляет сгенерированную строку. Зарегистрирован используя useFactory. 
 
-4.4 В CoreModule зарегистрированны LocalStorageService, ConstantsService, СonfigOptionsService
+5.4 В CoreModule зарегистрированны LocalStorageService, ConstantsService, СonfigOptionsService
 
-4.5 В компонент AboutComponent внедрены сервисы ConfigOptionService, ConstantService, GeneratorService, GeneratorFactoryService используя декоратор @Option
+5.5 В компонент AboutComponent внедрены сервисы ConfigOptionService, ConstantService, GeneratorService, GeneratorFactoryService используя декоратор @Option
 
-4.6 Добавлена директива appScalefont увеличивающая при клике шрифт. Для директивы добавлен @Input для передачи размера шрифта, используется ElementRef/Render2. Директива добавлена на параграфы компонента AboutComponent для демо.
+5.6 Добавлена директива appScalefont увеличивающая при клике шрифт. Для директивы добавлен @Input для передачи размера шрифта, используется ElementRef/Render2. Директива добавлена на параграфы компонента AboutComponent для демо.
+
+5.7 Для ProductsFeature Area добавлен свой роутинг модуль ProductsRoutingModule, туда перенесен route детальной страницы товара и добавлен новый /product-list.
+routes добавлены в модуль RouterModule с помощью статического свойства .forChild
