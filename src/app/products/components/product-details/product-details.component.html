@@ -25,3 +25,20 @@
         <button class="btn btn-primary"(click)="onBuyProduct()">Buy</button>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <!--
+        <button class="btn btn-success"
+            *ngIf="!feedbacksService.isDisplayed"
+            [routerLink]="[{outlets: {messages: ['messages']}}]">
+            Show Messages
+        </button>
+        -->
+        <button class="btn btn-success"
+            *ngIf="!feedbacksService.isDisplayed"
+            (click)="onDisplayFeedbacks()">
+            Show feedbacks
+        </button>      
+        <router-outlet name="feedbacks"></router-outlet>
+   </div>
+</div>

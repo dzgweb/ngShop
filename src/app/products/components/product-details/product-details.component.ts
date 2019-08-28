@@ -8,6 +8,8 @@ import { ProductModel } from '../../models/product.model';
 import { ProductsService } from '../../services/products.service';
 import { CartService } from '../../../cart/services/cart.service';
 
+import { FeedbacksService } from '../../../core';
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -20,7 +22,8 @@ export class ProductDetailsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private productsService: ProductsService,
-    private cartService: CartService
+    private cartService: CartService,
+    public feedbacksService: FeedbacksService
   ) { }
 
   ngOnInit() {
@@ -43,5 +46,21 @@ export class ProductDetailsComponent implements OnInit {
 
   onBuyProduct() {
     this.cartService.addItem(this.product);
+  }
+
+  onDisplayFeedbacks(): void {
+    this.feedbacksService.isDisplayed = !this.feedbacksService.isDisplayed;
+
+    if (this.feedbacksService.isDisplayed) {
+      this.feedbacksService.buttonLabel = 'Hide Feedbacks';
+      this.router.navigate([{ outlets: { feedbacks: ['feedbacks'] } }], {
+        relativeTo: this.route
+      });
+    } else {
+      this.feedbacksService.buttonLabel = 'Show Feedbacks';
+      this.router.navigate([{ outlets: { feedbacks: null } }], {
+        relativeTo: this.route
+      });
+    }
   }
 }

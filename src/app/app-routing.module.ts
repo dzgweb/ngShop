@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CartListComponent } from './cart/components/';
 import { AboutComponent, PathNotFoundComponent, LoginComponent } from './layout/components/';
 import { ProductListComponent } from './products/components/';
 
@@ -24,10 +23,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  },
-  {
-    path: 'cart',
-    component: CartListComponent
   },
   {
     // The router will match this route if the URL requested

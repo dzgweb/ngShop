@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import {Router} from '@angular/router';
+import {Router} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ProductsModule } from './products/products.module';
@@ -21,10 +21,10 @@ import { OrdersModuleModule } from './orders-module/orders-module.module';
     ProductsModule,
     LayoutModule,
     SharedModule,
-    CartModule,
     AdminModule,
     OrdersModuleModule,
     CoreModule,
+    CartModule,
     // AppRoutingModule MUST BE LAST
     AppRoutingModule
   ],
@@ -32,7 +32,7 @@ import { OrdersModuleModule } from './orders-module/orders-module.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  // constructor(router: Router) {
-  //   console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
-  // }
+  constructor(router: Router) {
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  }
 }

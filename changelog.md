@@ -103,3 +103,8 @@
 
 5.7 Для ProductsFeature Area добавлен свой роутинг модуль ProductsRoutingModule, туда перенесен route детальной страницы товара и добавлен новый /product-list.
 routes добавлены в модуль RouterModule с помощью статического свойства .forChild
+
+5.8 Добавлен модуль CartRoutingModule для корзины
+
+5.9 Добавлен Feedbacks сервис FeedbacksService core/services/messages  для отзывов о товаре и отображение отзывов о товаре в отдельном вспомогательном router-outler
+product/:productID
