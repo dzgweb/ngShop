@@ -15,14 +15,14 @@ export class LoginComponent implements OnInit, OnDestroy {
   private unsubscribe: Subject<void> = new Subject();
 
   constructor(
-    private authService: AuthService,
+    private authService: AuthService, // должен быть public, так как используется в шаблоне
     private router: Router
   ) { }
 
   ngOnInit() {
     this.setMessage();
   }
-  
+
   ngOnDestroy() {
     this.unsubscribe.next();
     this.unsubscribe.complete();
