@@ -1,0 +1,65 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "1 Item",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum.",
+      "price": 10,
+      "count": 1,
+      "images": "http://via.placeholder.com/400x400",
+      "category": "ProductCategory.Category1",
+      "isAvailable": true
+    },
+    {
+      "id": 2,
+      "title": "2 Item",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum.",
+      "price": 12,
+      "count": 3,
+      "images": "http://via.placeholder.com/400x400",
+      "category": "ProductCategory.Category1",
+      "isAvailable": true
+    },
+    {
+      "id": 3,
+      "title": "2 Item",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum.",
+      "price": 15,
+      "count": 2,
+      "images": "http://via.placeholder.com/400x400",
+      "category": "ProductCategory.Category1",
+      "isAvailable": true
+    },
+    {
+      "id": 4,
+      "title": "1 Item",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum",
+      "price": 10,
+      "count": 1,
+      "images": "http://via.placeholder.com/400x400",
+      "category": "ProductCategory.Category1",
+      "isAvailable": true
+    },
+    {
+      "id": 5,
+      "title": "2 Item",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum",
+      "price": 12,
+      "count": 3,
+      "images": "http://via.placeholder.com/400x400",
+      "category": "ProductCategory.Category1",
+      "isAvailable": false
+    },
+    {
+      "id": 6,
+      "title": "2 Item",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum",
+      "price": 15,
+      "count": 2,
+      "images": "http://via.placeholder.com/400x400",
+      "category": "ProductCategory.Category1",
+      "isAvailable": false
+    }
+  ]
+}
+  
