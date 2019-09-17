@@ -14,7 +14,7 @@
 
 <div class="row">
   <app-product 
-    *ngFor="let product of products$ | async | orderBy:sortKey.value:sortOrder.value"
+    *ngFor="let product of products | async | orderBy:sortKey.value:sortOrder.value"
     [product]="product"
     (buyProduct)="onBuyProduct($event)"
     (click)="onClickProduct(product)">

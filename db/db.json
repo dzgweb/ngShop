@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "title": "2 Item",
+      "title": "3 Item",
       "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum.",
       "price": 15,
       "count": 2,
@@ -32,7 +32,7 @@
     },
     {
       "id": 4,
-      "title": "1 Item",
+      "title": "4 Item",
       "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum",
       "price": 10,
       "count": 1,
@@ -42,17 +42,39 @@
     },
     {
       "id": 5,
-      "title": "2 Item",
+      "title": "5 Item",
       "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum",
       "price": 12,
       "count": 3,
       "images": "http://via.placeholder.com/400x400",
       "category": "ProductCategory.Category1",
-      "isAvailable": false
+      "isAvailable": true
     },
     {
       "id": 6,
-      "title": "2 Item",
+      "title": "6 Item",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum",
+      "price": 15,
+      "count": 2,
+      "images": "http://via.placeholder.com/400x400",
+      "category": "ProductCategory.Category1",
+      "isAvailable": false
+    }
+    ,
+    {
+      "id": 7,
+      "title": "7 Item",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum",
+      "price": 27,
+      "count": 2,
+      "images": "http://via.placeholder.com/400x400",
+      "category": "ProductCategory.Category1",
+      "isAvailable": true
+    }
+    ,
+    {
+      "id": 8,
+      "title": "8 Item",
       "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum",
       "price": 15,
       "count": 2,

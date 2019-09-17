@@ -33,11 +33,10 @@
             [routerLink]="[{outlets: {messages: ['messages']}}]">
             Show Messages
         </button>
-        -->
-        <button class="btn btn-success"
-            *ngIf="!feedbacksService.isDisplayed"
+        -->  <!--    *ngIf="!feedbacksService.isDisplayed"-->
+        <button class="btn btn-success"          
             (click)="onDisplayFeedbacks()">
-            Show feedbacks
+            {{feedbacksService.buttonLabel}}
         </button>      
         <router-outlet name="feedbacks"></router-outlet>
    </div>
