@@ -1,6 +1,7 @@
-# NgShop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+# NgShop
+Angular version: 8.2.0
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
 ## Development server
 
