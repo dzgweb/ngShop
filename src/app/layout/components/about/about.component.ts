@@ -15,7 +15,7 @@ export class AboutComponent implements OnInit {
   contentRand: string;
 
   constructor(
-    @Optional() @Inject(ConstantsService) private constants: object, // <-- public
+    @Optional() @Inject(ConstantsService) public constants: object,
     @Optional() @Inject(GeneratorS) private generatorS: string
   ) { }
 

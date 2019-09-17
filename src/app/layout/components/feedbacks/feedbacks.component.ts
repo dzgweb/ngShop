@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FeedbacksService } from '../../../core';
 
 @Component({
@@ -12,13 +12,17 @@ export class FeedbacksComponent implements OnInit {
 
   constructor(
     public feedbacksService: FeedbacksService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
   ) {}
 
   ngOnInit() {}
 
   onClose() {
-    this.router.navigate([{ outlets: { messages: null } }]);
+    this.router.navigate([{ outlets: { feedbacks: null } }], {
+      relativeTo: this.route
+    });
+    console.log('close');
     this.feedbacksService.isDisplayed = false;
   }
 

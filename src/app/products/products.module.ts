@@ -12,7 +12,7 @@ import { FeedbacksComponent } from '../layout/components';
     ProductComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    FeedbacksComponent 
+    FeedbacksComponent
   ],
   imports: [
     CommonModule,

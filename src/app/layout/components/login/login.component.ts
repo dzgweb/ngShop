@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   private unsubscribe: Subject<void> = new Subject();
 
   constructor(
-    private authService: AuthService, // должен быть public, так как используется в шаблоне
+    public authService: AuthService,
     private router: Router
   ) { }
 

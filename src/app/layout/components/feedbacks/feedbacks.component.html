@@ -8,7 +8,7 @@
     <textarea [(ngModel)]="message"></textarea>
   </div>
   <div>
-    <button type="button" class="btn btn-primary" (click)="onSend()">{{feedbacksService.buttonLabel}}</button>
+    <button type="button" class="btn btn-primary" (click)="onSend()">Send feedback</button>
   </div>
   <div *ngFor="let message of feedbacksService.getMessages()" class="message-row">
       {{message}}
