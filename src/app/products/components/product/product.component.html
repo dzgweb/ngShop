@@ -7,7 +7,7 @@
         Price: <b>{{product.price | currency:'USD'}}</b>
       </div>
       <div class="product-category">
-        Category: {{product.category | uppercase}}
+        Category: {{product.category | enumToString: ProductCategory | uppercase }}
       </div>
       <!-- <p class="product-desc">{{product.desc}}</p> -->
       <p>

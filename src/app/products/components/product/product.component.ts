@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
-import { ProductModel } from './../../models/product.model';
+import { ProductModel, ProductCategory } from './../../models/';
 
 @Component({
   selector: 'app-product',
@@ -9,6 +9,8 @@ import { ProductModel } from './../../models/product.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductComponent {
+  ProductCategory = ProductCategory;
+
   @Input() product: ProductModel;
 
   @Output() buyProduct: EventEmitter<ProductModel> = new EventEmitter<ProductModel>();

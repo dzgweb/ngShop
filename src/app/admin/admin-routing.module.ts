@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminComponent } from './admin.component';
 import { AdminDashboardComponent, ManageOrdersComponent, ManageProductsComponent } from './components';
-
+import { ProductFormComponent } from '../products/';
 import { AuthGuard } from './../core';
 
 const routes: Routes = [
@@ -16,7 +16,13 @@ const routes: Routes = [
         path: '',
         canActivateChild: [AuthGuard],
         children: [
-          { path: 'products', component: ManageProductsComponent },
+          {
+            path: 'products',
+            children: [
+              { path: '', component: ManageProductsComponent },
+              { path: 'add', component: ProductFormComponent },
+            ]
+          },
           { path: 'orders', component: ManageOrdersComponent },
           { path: '', component: AdminDashboardComponent }
         ]

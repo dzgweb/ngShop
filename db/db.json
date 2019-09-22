@@ -7,7 +7,7 @@
       "price": 10,
       "count": 1,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 1,
       "isAvailable": true
     },
     {
@@ -17,7 +17,7 @@
       "price": 12,
       "count": 3,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 2,
       "isAvailable": true
     },
     {
@@ -27,7 +27,7 @@
       "price": 15,
       "count": 2,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 3,
       "isAvailable": true
     },
     {
@@ -37,7 +37,7 @@
       "price": 10,
       "count": 1,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 4,
       "isAvailable": true
     },
     {
@@ -47,7 +47,7 @@
       "price": 12,
       "count": 3,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 5,
       "isAvailable": true
     },
     {
@@ -57,10 +57,9 @@
       "price": 15,
       "count": 2,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 4,
       "isAvailable": false
-    }
-    ,
+    },
     {
       "id": 7,
       "title": "7 Item",
@@ -68,10 +67,9 @@
       "price": 27,
       "count": 2,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 2,
       "isAvailable": true
-    }
-    ,
+    },
     {
       "id": 8,
       "title": "8 Item",
@@ -79,9 +77,30 @@
       "price": 15,
       "count": 2,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 3,
       "isAvailable": false
+    },
+    {
+      "title": "new product",
+      "price": 100,
+      "count": 1,
+      "id": 9
+    },
+    {
+      "category": 0,
+      "count": 2,
+      "price": 100,
+      "title": "new product 2",
+      "isAvailable": false,
+      "id": 10
+    },
+    {
+      "title": "new product 3",
+      "price": 300,
+      "count": 3,
+      "category": 2,
+      "isAvailable": true,
+      "id": 11
     }
   ]
 }
-  

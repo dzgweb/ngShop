@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { SpinnerComponent } from './spinner/spinner.component';
 import { HighlightDirective } from './directives/highlight.directive';
-import { OrderByPipe } from './pipes/orderby.pipe';
+import { OrderByPipe, EnumPipe } from './pipes/';
 import { ScalefontDirective } from './directives/scalefont.directive';
 
+
 @NgModule({
-  declarations: [SpinnerComponent, HighlightDirective, OrderByPipe, ScalefontDirective],
+  declarations: [SpinnerComponent, HighlightDirective, OrderByPipe, ScalefontDirective, EnumPipe],
   imports: [CommonModule],
-  exports: [SpinnerComponent, HighlightDirective, OrderByPipe, ScalefontDirective]
+  exports: [SpinnerComponent, HighlightDirective, OrderByPipe, ScalefontDirective, EnumPipe]
 })
 export class SharedModule { }
