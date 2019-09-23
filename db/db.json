@@ -82,25 +82,12 @@
     },
     {
       "title": "new product",
-      "price": 100,
+      "price": 14,
       "count": 1,
-      "id": 9
-    },
-    {
-      "category": 0,
-      "count": 2,
-      "price": 100,
-      "title": "new product 2",
-      "isAvailable": false,
-      "id": 10
-    },
-    {
-      "title": "new product 3",
-      "price": 300,
-      "count": 3,
-      "category": 2,
+      "images": "http://cryptoland.by/wp-content/uploads/2018/01/HDMI-VGA_001.jpg",
+      "category": 1,
       "isAvailable": true,
-      "id": 11
+      "id": 9
     }
   ]
 }

@@ -16,6 +16,11 @@
                 [(ngModel)]="product.title">
           </div>
           <div class="form-group">
+            <label>Product description    </label>
+            <textarea [(ngModel)]="product.desc" class="form-control" rows="4" ></textarea>
+    
+        </div>
+          <div class="form-group">
             <label for="price">Price</label>
             <input type="number"
                 class="form-control"
@@ -33,8 +38,22 @@
                 placeholder="Count"
                 [(ngModel)]="product.count">
           </div>
+          <!--
           <div class="form-group">
-            <label for="category">Category</label>
+               <label for="file-img">Add images</label> 
+               <input type="file" id="file-img" name="images" [(ngModel)]="product.images">
+          </div>
+          -->
+          <div class="form-group">
+            <label for="file-img">Images url</label> 
+                <input type="text" 
+                class="form-control" 
+                id="file-img" name="images" 
+                placeholder="Images url" 
+                [(ngModel)]="product.images">
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label> 
             <select class="form-control" name="category" [(ngModel)]="product.category" id="category">
                 <option *ngFor="let category of categoryKeys()" [ngValue]="categoryValues[category]">
                   {{category}}
