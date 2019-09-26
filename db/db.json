@@ -3,7 +3,7 @@
     {
       "id": 2,
       "title": "2 Item",
-      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum.",
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum. ",
       "price": 16,
       "count": 1,
       "images": "http://via.placeholder.com/400x400",

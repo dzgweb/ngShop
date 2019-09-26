@@ -5,6 +5,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
+import { AutoUnsubscribe } from './../../../core';
 import { ProductModel, ProductsService, ProductPromiseService, ProductCategory } from '../../../products/';
 
 @Component({
@@ -12,6 +13,7 @@ import { ProductModel, ProductsService, ProductPromiseService, ProductCategory }
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.scss']
 })
+@AutoUnsubscribe()
 export class ProductFormComponent implements OnInit {
   product: ProductModel;
   originalProduct: ProductModel;
@@ -62,7 +64,6 @@ export class ProductFormComponent implements OnInit {
         },
         error => console.log(error)
       );
-
   }
 
   onGoBack(): void {
