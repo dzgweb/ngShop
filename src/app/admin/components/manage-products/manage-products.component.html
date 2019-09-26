@@ -3,7 +3,7 @@
   <button (click)="onAddProduct()" class="btn btn-success">Add product</button>
 </div> 
 
-<div class="manage-product col-sm-6 col-md-3" *ngFor="let product of products$ | async">    
+<div class="manage-product col-sm-6 col-md-3" [class.edited]="isEdited(product)"  *ngFor="let product of products$ | async">    
   <div class="manage-product-btn">
       <button class="btn btn-warning btn-sm"
         (click)="onUpdateProduct(product)">

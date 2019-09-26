@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 // rxjs
+import { Observable, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import { ProductModel, ProductsService, ProductPromiseService, ProductCategory } from '../../../products/';
@@ -17,10 +18,13 @@ export class ProductFormComponent implements OnInit {
   category = ProductCategory;
   categoryValues = ProductCategory;
 
+  private sub: Subscription;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private productsService: ProductPromiseService
+    private productsService: ProductsService,
+    private poductPromiseService: ProductPromiseService
   ) { }
 
   ngOnInit() {
@@ -47,9 +51,18 @@ export class ProductFormComponent implements OnInit {
     const product = { ...this.product };
 
     const method = product.id ? 'updateProduct' : 'addProduct';
-    this.productsService[method](product)
-      .then(() => this.onGoBack())
-      .catch(err => console.log(err));
+    this.sub = this.productsService[method](product)
+      .subscribe(
+        savedProduct => {
+          this.originalProduct = { ...savedProduct };
+          product.id
+            // optional parameter: http://localhost:4200/products;editedProductID=2
+            ? this.router.navigate(['/admin/products', { editedProductID: product.id }])  // add parameter product that has been edited
+            : this.onGoBack();
+        },
+        error => console.log(error)
+      );
+
   }
 
   onGoBack(): void {
