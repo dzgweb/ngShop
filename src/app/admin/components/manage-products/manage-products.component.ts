@@ -4,7 +4,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 // rxjs
 import { Observable, Subscription} from 'rxjs';
 
-import { ProductModel, ProductsService } from '../../../products/';
+import { ProductModel, ProductsService, ProductPromiseService } from '../../../products/';
 
 @Component({
   selector: 'app-manage-products',
@@ -17,7 +17,8 @@ export class ManageProductsComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private productsPromiseService: ProductPromiseService
   ) { }
 
   ngOnInit() {
@@ -28,8 +29,13 @@ export class ManageProductsComponent implements OnInit {
     this.router.navigate(['add'], {relativeTo: this.route});
   }
 
-  onUpdateProduct() {
+  onUpdateProduct(product: ProductModel) {
+    const link = ['edit', product.id];
+    this.router.navigate(link, {relativeTo: this.route});
+  }
 
+  onDeleteProduct(product: ProductModel) {
+    this.productsPromiseService.deleteProduct(product);
   }
 
 }

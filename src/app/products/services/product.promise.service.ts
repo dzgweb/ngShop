@@ -64,6 +64,20 @@ export class ProductPromiseService {
       .catch(this.handleError);
   }
 
+  deleteProduct(product: ProductModel): Promise<ProductModel> {
+    const url = `${this.productsUrl}/${product.id}`;
+
+    return (
+      this.http
+        .delete(url)
+        .toPromise()
+        // json-server return empty object
+        // so we don't use .then(...)
+        .catch(this.handleError)
+    );
+  }
+
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
