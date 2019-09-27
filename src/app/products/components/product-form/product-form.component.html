@@ -1,0 +1,81 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="pannel-title">
+            Product Form
+        </h4>
+    </div>
+    <div class="panel-body">
+        <form *ngIf="product" (ngSubmit)="onAddProduct()" id="product-form" #form="ngForm">
+          <div class="form-group">
+            <label for="title">Product title</label>
+            <input type="text"
+                class="form-control"
+                id="title" name="title"
+                placeholder="Product title"
+                required
+                [(ngModel)]="product.title">
+          </div>
+          <div class="form-group">
+            <label>Product description    </label>
+            <textarea [(ngModel)]="product.desc" name='desc' class="form-control" rows="4" ></textarea>  
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number"
+                class="form-control"
+                id="price" name="price"
+                placeholder="Price"
+                [(ngModel)]="product.price">
+          </div>
+          <div class="form-group">
+            <label for="count">Count</label>
+            <input type="number"
+                min="0"
+                step="1"
+                class="form-control"
+                id="count" name="count"
+                placeholder="Count"
+                [(ngModel)]="product.count">
+          </div>
+          <!--
+          <div class="form-group">
+               <label for="file-img">Add images</label> 
+               <input type="file" id="file-img" name="images" [(ngModel)]="product.images">
+          </div>
+          -->
+          <div class="form-group">
+            <label for="file-img">Images url</label> 
+                <input type="text" 
+                class="form-control" 
+                id="file-img" name="images" 
+                placeholder="Images url" 
+                [(ngModel)]="product.images">
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label> 
+            <select class="form-control" name="category" [(ngModel)]="product.category" id="category">
+                <option *ngFor="let category of categoryKeys()" [ngValue]="categoryValues[category]">
+                  {{category}}
+                </option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="isAvailable">Is available
+              <input type="checkbox" id="isAvailable" name="isAvailable" placeholder="Is available" [(ngModel)]="product.isAvailable">
+            </label>
+          </div>
+          <button
+              type="submit"
+              class="btn btn-primary"
+              form="product-form"
+              [disabled]="form.invalid">Save
+          </button>
+          <button
+              type="button"
+              class="btn btn-primary"
+              (click)="onGoBack()">Back
+          </button>
+        </form>
+    </div>
+</div>
+

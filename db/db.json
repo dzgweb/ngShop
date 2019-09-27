@@ -1,23 +1,13 @@
 {
   "products": [
     {
-      "id": 1,
-      "title": "1 Item",
-      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum.",
-      "price": 10,
-      "count": 1,
-      "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
-      "isAvailable": true
-    },
-    {
       "id": 2,
       "title": "2 Item",
-      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum.",
-      "price": 12,
-      "count": 3,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum. ",
+      "price": 16,
+      "count": 1,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 2,
       "isAvailable": true
     },
     {
@@ -25,9 +15,9 @@
       "title": "3 Item",
       "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum.",
       "price": 15,
-      "count": 2,
+      "count": 1,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 3,
       "isAvailable": true
     },
     {
@@ -37,7 +27,7 @@
       "price": 10,
       "count": 1,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 4,
       "isAvailable": true
     },
     {
@@ -47,7 +37,7 @@
       "price": 12,
       "count": 3,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 5,
       "isAvailable": true
     },
     {
@@ -55,12 +45,11 @@
       "title": "6 Item",
       "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum",
       "price": 15,
-      "count": 2,
+      "count": 1,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
-      "isAvailable": false
-    }
-    ,
+      "category": 4,
+      "isAvailable": true
+    },
     {
       "id": 7,
       "title": "7 Item",
@@ -68,20 +57,17 @@
       "price": 27,
       "count": 2,
       "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
+      "category": 2,
       "isAvailable": true
-    }
-    ,
+    },
     {
-      "id": 8,
-      "title": "8 Item",
-      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et deserunt sapiente doloremque accusamus laboriosam harum rerum",
-      "price": 15,
-      "count": 2,
-      "images": "http://via.placeholder.com/400x400",
-      "category": "ProductCategory.Category1",
-      "isAvailable": false
+      "title": "new product",
+      "price": 14,
+      "count": 1,
+      "images": "http://cryptoland.by/wp-content/uploads/2018/01/HDMI-VGA_001.jpg",
+      "category": 1,
+      "isAvailable": true,
+      "id": 9
     }
   ]
 }
-  

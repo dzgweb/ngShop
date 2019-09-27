@@ -115,3 +115,7 @@ product/:productID
 
 6.2  добавлен HttpClientModule, создан сервис ProductPromiseService в котором методы реализованы на основе Promise,
 в ProductsService методы реализованы на основе Observable
+
+6.3 Добавлен ProductFormComponent форма для добавления и обновления товара, в AdminModule компоненте ManageProductsComponent реализована возможность добавления товара
+
+6.4 в AdminModule компоненте ManageProductsComponent добавлена возможность удаления и обновления товара, в ProductPromiseService метод  deleteProduct

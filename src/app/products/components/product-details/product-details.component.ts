@@ -5,7 +5,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
 import { ProductModel } from '../../models/product.model';
-import { ProductsService } from '../../services/products.service';
+import { ProductsService, ProductPromiseService } from '../../services';
 import { CartService } from '../../../cart/services/cart.service';
 
 import { FeedbacksService } from '../../../core';
@@ -22,6 +22,7 @@ export class ProductDetailsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private productsService: ProductsService,
+    private productPromiseService: ProductPromiseService,
     private cartService: CartService,
     public feedbacksService: FeedbacksService
   ) { }
@@ -30,7 +31,7 @@ export class ProductDetailsComponent implements OnInit {
     this.route.paramMap
       .pipe(
         switchMap((params: Params) => {
-          return this.productsService.getProduct(+params.get('productID'));
+          return this.productPromiseService.getProduct(+params.get('productID'));
         })
       )
       .subscribe(
