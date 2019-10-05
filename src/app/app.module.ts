@@ -13,6 +13,7 @@ import { CartModule } from './cart/cart.module';
 import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
 import { OrdersModule } from './orders/orders.module';
+import { RootStoreModule } from './core/@ngrx/root-store.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { OrdersModule } from './orders/orders.module';
     CoreModule,
     CartModule,
     OrdersModule,
+    RootStoreModule,
     // AppRoutingModule MUST BE LAST
     AppRoutingModule
   ],

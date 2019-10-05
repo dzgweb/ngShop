@@ -1,16 +1,19 @@
 import { Action, createReducer, on } from '@ngrx/store';
 
-import { TasksState, initialTasksState } from './tasks.state';
-import * as TasksActions from './tasks.actions';
+import { OrdersState, initialOrdersState } from './orders.state';
+import * as OrdersActions from './orders.actions';
 
 export const ordersFeatureKey = 'orders';
 
 
-const ordersReducer = createReducer(
-  initialState,
-
+const reducer = createReducer(
+  initialOrdersState,
+  on(OrdersActions.loadOrders, state => {
+    console.log('GET_ORDERS action being handled!');
+    return {...state};
+  }),
 );
 
-export function reducer(state: State | undefined, action: Action) {
-  return ordersReducer(state, action);
+export function ordersReducer(state: OrdersState | undefined, action: Action) {
+  return reducer(state, action);
 }
