@@ -7,8 +7,6 @@ import { AppState, OrdersState } from './../../../core/@ngrx';
 // rxjs
 import { Observable } from 'rxjs';
 
-import { IOrders, OrderModel } from './../../../orders';
-
 @Component({
   selector: 'app-manage-orders',
   templateUrl: './manage-orders.component.html',
@@ -25,5 +23,4 @@ export class ManageOrdersComponent implements OnInit {
     console.log('We have a store! ', this.store);
     this.ordersState$ = this.store.pipe(select('orders'));
   }
-
 }

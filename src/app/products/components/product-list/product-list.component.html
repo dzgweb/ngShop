@@ -11,7 +11,7 @@
       </select>
   </div>
 </div>
-
+<!-- 
 <div class="row">
   <app-product 
     *ngFor="let product of products | async | orderBy:sortKey.value:sortOrder.value"
@@ -19,4 +19,13 @@
     (buyProduct)="onBuyProduct($event)"
     (click)="onClickProduct(product)">
   </app-product>
-</div>
+</div> -->
+
+<div class="row">
+    <app-product 
+      *ngFor="let product of (productsState$ | async).data | orderBy:sortKey.value:sortOrder.value"
+      [product]="product"
+      (buyProduct)="onBuyProduct($event)"
+      (click)="onClickProduct(product)">
+    </app-product>
+  </div>
