@@ -1,3 +1,5 @@
-<p>
-  manage-orders works!
-</p>
+<app-order 
+  *ngFor='let order of (ordersState$ | async).data'
+  [order]="order"
+>
+</app-order>

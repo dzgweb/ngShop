@@ -7,6 +7,8 @@ import { AdminComponent } from './admin.component';
 import { AdminDashboardComponent, ManageOrdersComponent, ManageProductsComponent } from './components';
 import { ProductsModule } from '../products/products.module';
 
+import { OrdersModule } from '../orders/orders.module';
+
 @NgModule({
   declarations: [
     AdminComponent,
@@ -16,8 +18,9 @@ import { ProductsModule } from '../products/products.module';
   ],
   imports: [
     CommonModule,
-    ProductsModule,
     FormsModule,
+    ProductsModule,
+    OrdersModule,
     AdminRoutingModule
   ]
 })
