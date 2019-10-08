@@ -23,7 +23,7 @@
 
 <div class="row">
     <app-product 
-      *ngFor="let product of (productsState$ | async).data | orderBy:sortKey.value:sortOrder.value"
+      *ngFor="let product of (productsState$ | async | orderBy:sortKey.value:sortOrder.value).data"
       [product]="product"
       (buyProduct)="onBuyProduct($event)"
       (click)="onClickProduct(product)">
