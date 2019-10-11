@@ -1,13 +1,15 @@
-import { IProduct, ProductModel } from './../../../products';
+import { IProduct } from './../../../products';
 
 export interface ProductsState {
-    data: ReadonlyArray<IProduct>;
+  data: ReadonlyArray<IProduct>;
+  readonly loading: boolean;
+  readonly loaded: boolean;
+  readonly error: Error | string;
 }
 
 export const initialProductsState: ProductsState = {
-    data: [
-      new ProductModel(1, 'Item 1', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.', 100, 1, '', '', 2, true),
-      new ProductModel(2, 'Item 2', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.', 16, 1, '', '', 2, true),
-      new ProductModel(3, 'Item 3', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.', 50, 1, '', '', 2, true),
-    ]
+  data: [],
+  loading: false,
+  loaded: false,
+  error: null
 };

@@ -4,6 +4,16 @@ import { IProduct } from './../../../products';
 
 export const getProducts = createAction('[Products] GET_PRODUCTS');
 
+export const getProductsSuccess = createAction(
+  '[Products Effects] GET_PRODUCTS_SUCCESS',
+  props<{ products: IProduct[] }>()
+);
+
+export const getProductsError = createAction(
+  '[Products Effects] GET_PRODUCTS_ERRORS',
+  props<{ error: Error | string }>()
+);
+
 export const getProduct = createAction(
   '[Products] GET_PRODUCT',
   props<{ productID: number }>()

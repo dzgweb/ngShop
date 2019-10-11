@@ -9,7 +9,29 @@ const reducer = createReducer(
   initialProductsState,
   on(ProductsAction.getProducts, state => {
     console.log('GET_PRODUCTS action being handled!');
-    return { ...state };
+    return {
+      ...state,
+      loading: true
+    };
+  }),
+  on(ProductsAction.getProductsSuccess, (state, props) => {
+    console.log('GET_PRODUCTS_SUCCESS action being handled!');
+    const data = [...props.products];
+    return {
+      ...state,
+      data,
+      loading: false,
+      loaded: true
+    };
+  }),
+  on(ProductsAction.getProductsError, (state, props) => {
+    console.log('GET_PRODUCTS_ERROR action being handled!');
+    const error = props.error;
+    return {
+      ...state,
+      loading: false,
+      loaded: false
+    };
   }),
   on(ProductsAction.getProduct, state => {
     console.log('GET_PRODUCT action being handled!');
